@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/recharge.css">
+    <title>Recargas &bull; SportSiete</title>
+</head>
+
+<body>
+<main class="page-wrapper d-flex flex-column">
+    <!-- Page content-->
+    <!-- Background image-->
+    <div class="d-none d-md-block position-absolute w-50 h-100 bg-size-cover"
+         style="top: 0; right: 0; background-image: url('imagenes/recharge/recarga.jpg');">
+    </div>
+    <!-- Actual content-->
+    <section class="container d-flex align-items-center pt-7 pb-3 pb-md-4" style="flex: 1 0 auto;">
+        <div class="w-100 pt-3">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 offset-lg-1">
+                    <!-- Sign in view-->
+                    <div id="collapseOne">
+                        <div class="d-none d-md-block text-nowrap me-3">
+                            <a href="https://www.sportsiete.com/"><em class="ai-arrow-left"></em> Regresar al sitio
+                                principal</a>
+                        </div>
+
+                        <div class="row">
+                            <h3>Recargas Sport Siete</h3>
+
+                            <div class="row">
+                                <div class="col-md-12 d-flex justify-content-between align-items-center">
+                                    <input type="radio" class="recharge" onclick="recharge();" name="tipRecharge"
+                                           id="charge" value="1" checked>
+                                    <label for="charge">Recargas disponibles</label>
+
+                                    <input type="radio" class="confirm" onclick="confirmPay();" name="tipRecharge"
+                                           id="pay" value="0">
+                                    <label for="pay">Confirmar pago</label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <hr class="w-50 bg-primary">
+                            </div>
+
+                            <div class="col-md-12" id="rechargeCard">
+                                <p class="fs-ms text-muted mb-4 text-center">Recarga en nuestro sitio web el monto
+                                    deseado</p>
+                                <ol class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Recarga <strong>$5.000"</strong>
+                                        <script src="https://www.mercadopago.com.co/integrations/v1/web-payment-checkout.js"
+                                                data-preference-id="733622208-b19de538-3d0a-4165-9e94-c89c077b9089"
+                                                data-source="button" onclick="init()"></script>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Recarga <strong>$10.000"</strong>
+                                        <script src="https://www.mercadopago.com.co/integrations/v1/web-payment-checkout.js"
+                                                data-preference-id="733622208-38b4b5e2-9c43-4d41-8720-70a3ed63a07c"
+                                                data-source="button" onclick="init()"></script>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Recarga <strong>$15.000"</strong>
+                                        <script src="https://www.mercadopago.com.co/integrations/v1/web-payment-checkout.js"
+                                                data-preference-id="733622208-672c26f5-3c49-4ab3-a4ce-0a1294ee592c"
+                                                data-source="button" onclick="init()"></script>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Recarga <strong>$30.000"</strong>
+                                        <script src="https://www.mercadopago.com.co/integrations/v1/web-payment-checkout.js"
+                                                data-preference-id="733622208-9b47d942-fa6a-4ec4-9da6-17ee3169c77d"
+                                                data-source="button" onclick="init()"></script>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Recarga <strong>$50.000"</strong>
+                                        <script src="https://www.mercadopago.com.co/integrations/v1/web-payment-checkout.js"
+                                                data-preference-id="733622208-89cefd4c-371c-4c01-99d4-a2724429d766"
+                                                data-source="button" onclick="init()"></script>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Recarga <strong>$100.000"</strong>
+                                        <script src="https://www.mercadopago.com.co/integrations/v1/web-payment-checkout.js"
+                                                data-preference-id="733622208-ee1dd35c-36fc-47a8-a316-e89f6f5fd64f"
+                                                data-source="button" onclick="init()"></script>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Recarga <strong>$200.000"</strong>
+                                        <script src="https://www.mercadopago.com.co/integrations/v1/web-payment-checkout.js"
+                                                data-preference-id="733622208-d825e5c0-d935-446c-9e99-fdfdfd8da7c9"
+                                                data-source="button" onclick="init()"></script>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div id="confirmPayCard" style="display:none;">
+                            <p class="fs-ms text-muted mb-4 text-success">
+                                Solo te falta un paso, confimanos tu pago para poder cargar el valor a tu cuenta
+                            </p>
+                            <form id="formRecharge">
+                                <input type="hidden" id="idUser">
+                                <label class="font-weight-bold text-muted" for="email">
+                                    Correo electrónico registrado:
+                                </label>
+                                <br>
+                                <div class="input-group mb-3 has-validation">
+                                    <em class="ai-hard-drive position-absolute top-50 start-0 translate-middle-y ms-3"></em>
+                                    <input class="form-control rounded" name="email" id="email" type="email"
+                                           placeholder="Ingresa su correo electrónico registrado"
+                                           aria-required="true" onChange="valEmail();">
+                                </div>
+                                <div class="feedback text-danger" id="msg-email" style="display: none">
+                                    Este correo no esta registrado en nuestro sitio intente con un correo valido
+                                </div>
+
+                                <label class="font-weight-bold text-muted" for="valProduct">Producto:</label><br>
+                                <div class="input-group mb-3 has-validation">
+                                    <em class="ai-dollar-sign position-absolute top-50 start-0 translate-middle-y ms-3"></em>
+                                    <select class="form-control rounded" name="product" id="valProduct"
+                                            aria-required="true">
+                                        <option value="5000">Recarga $5.000"</option>
+                                        <option value="10000">Recarga $10.000"</option>
+                                        <option value="15000">Recarga $15.000"</option>
+                                        <option value="30000">Recarga $30.000"</option>
+                                        <option value="50000">Recarga $50.000"</option>
+                                        <option value="100000">Recarga $100.000"</option>
+                                        <option value="200000">Recarga $200.000"</option>
+                                    </select>
+                                </div>
+                                <label class="font-weight-bold text-muted" for="referencePay">Referencia de
+                                    pago:</label><br>
+                                <div class="input-group mb-3 has-validation">
+                                    <em class="ai-user-check position-absolute top-50 start-0 translate-middle-y ms-3"></em>
+                                    <input class="form-control rounded" name="referencePay" id="referencePay"
+                                           type="text" maxlength="15" placeholder="# Referencia de pago"
+                                           aria-required="true" onChange="valReferencePay()">
+                                </div>
+                                <button class="btn btn-primary d-block w-100" type="submit" id="btnSaveRecharge">
+                                    Procesar pago realizado
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <hr>
+                    <section class="container" align="center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="imagenes/recharge/visa.svg" alt="Visa" class="img-fluid"
+                                     style="width: 60px;height: 50px;">
+                                <img src="imagenes/recharge/mastercard.svg" alt="Mastercard" class="img-fluid"
+                                     style="width: 60px;height: 50px;">
+                                <img src="imagenes/recharge/pse.png" alt="PSE" class="img-fluid"
+                                     style="width: 55px;height: 45px;">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div class="alert alert-danger alert-fixed" id="alert" role="alert"></div>
+<div class="alert alert-success alert-fixed" id="alertSuccess" role="alert"></div>
+<script src="js/recharge.js"></script>
+</body>
+
+</html>
